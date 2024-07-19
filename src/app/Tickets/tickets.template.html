@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-12">
+        @for (ticket of tickets$ | async; track $index) {
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">{{ ticket.title }}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{ ticket.description }}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary" (click)="editTicket(ticket)">Edit</button>&nbsp;
+              <button class="btn btn-danger" (click)="deleteTicket(ticket)">Delete</button>
+            </div>
+          </div>
+      }
+    </div>
+  </div>
