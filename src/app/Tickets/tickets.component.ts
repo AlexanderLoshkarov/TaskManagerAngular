@@ -3,11 +3,12 @@ import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Ticket } from '../types';
 import { TicketsService } from './tickets.service';
+import { AddNewTicketComponent } from './add-new-ticket/add-new-ticket.component';
 
 @Component({
   selector: 'tickets',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, AddNewTicketComponent],
   templateUrl: './tickets.template.html',
   styleUrl: './tickets.styles.css',
 })
@@ -21,10 +22,10 @@ export class TicketsComponent {
   }
 
   editTicket = (ticket: Ticket) => {
-    console.log(ticket);
+    console.warn(ticket);
   };
 
   deleteTicket = (ticket: Ticket) => {
-    console.log(ticket);
+    console.warn(ticket);
   };
 }

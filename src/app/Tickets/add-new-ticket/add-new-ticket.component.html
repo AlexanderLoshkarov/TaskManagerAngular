@@ -1,0 +1,11 @@
+<form [formGroup]="addNewTicketForm" (ngSubmit)="onSubmit()">
+  <label for="description">Title: </label>
+  <input id="title" type="text" formControlName="title" />
+
+  <label for="description">Description: </label>
+  <input id="description" type="text" formControlName="description" />
+
+  <p>Value: {{ addNewTicketForm.value.title }}</p>
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!addNewTicketForm.valid">Submit</button>
+</form>
